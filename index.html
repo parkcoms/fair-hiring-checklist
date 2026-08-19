@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>공정채용 절차 체크리스트 | 상생의 노동법</title>
+<meta name="description" content="채용 기획부터 서류 파기까지, 채용절차법상 법정 의무 15개 항목을 단계별로 자가점검하는 체크리스트. 각 항목에 근거 조문과 위반 시 제재를 함께 담았습니다. 기업측 노동법 전문 변호사가 설계했습니다.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="공정채용 절차 체크리스트 | 상생의 노동법">
+<meta property="og:description" content="채용 기획부터 서류 파기까지, 채용절차법상 법정 의무 15개 항목 단계별 자가점검. 각 항목에 근거 조문과 위반 시 제재를 함께 담았습니다.">
+<meta property="og:url" content="https://fair-hiring-checklist.vercel.app/">
+<meta property="og:image" content="https://fair-hiring-checklist.vercel.app/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%3Ccircle%20cx%3D%2732%27%20cy%3D%2732%27%20r%3D%2729%27%20fill%3D%27none%27%20stroke%3D%27%23BE3325%27%20stroke-width%3D%275%27/%3E%3Ctext%20x%3D%2732%27%20y%3D%2743%27%20font-size%3D%2730%27%20text-anchor%3D%27middle%27%20fill%3D%27%23BE3325%27%20font-family%3D%27serif%27%20font-weight%3D%27bold%27%3E%ED%95%84%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap">
+<style>
+:root {
+  --bg: #FBF9F3;
+  --surface: #FFFDF9;
+  --surface-2: #F3EFE5;
+  --ink: #182740;
+  --ink-soft: #4C5D72;
+  --ink-faint: #8B96A3;
+  --line: #E8E3D6;
+  --line-strong: #DAD3C3;
+  --accent: #2C4A6E;
+  --accent-soft: #E2E8EF;
+  --accent-ink: #243C5C;
+  --crim-bg: #F6E4E0;  --crim-fg: #96261B;
+  --high-bg: #F5ECD8;  --high-fg: #9A7420;
+  --mid-bg:  #F5ECD8;  --mid-fg:  #9A7420;
+  --low-bg:  #F5ECD8;  --low-fg:  #9A7420;
+  --duty-bg: #E2E8EF;  --duty-fg: #2C4A6E;
+  --done-bg: #F3EFE5;
+  --seal: #BE3325;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #17150F;
+    --surface: #1E1B15;
+    --surface-2: #28241B;
+    --ink: #EAE5D9;
+    --ink-soft: #B3AB98;
+    --ink-faint: #857E6D;
+    --line: #332F26;
+    --line-strong: #47412F;
+    --accent: #8FA8C8;
+    --accent-soft: #242C38;
+    --accent-ink: #AFC4DE;
+    --crim-bg: #46201C; --crim-fg: #F0A29A;
+    --high-bg: #3E3312; --high-fg: #E3C465;
+    --mid-bg:  #3E3312; --mid-fg:  #E3C465;
+    --low-bg:  #3E3312; --low-fg:  #E3C465;
+    --duty-bg: #242C38; --duty-fg: #A3B8D2;
+    --done-bg: #29251D;
+    --seal: #E0705F;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #17150F;
+  --surface: #1E1B15;
+  --surface-2: #28241B;
+  --ink: #EAE5D9;
+  --ink-soft: #B3AB98;
+  --ink-faint: #857E6D;
+  --line: #332F26;
+  --line-strong: #47412F;
+  --accent: #8FA8C8;
+  --accent-soft: #242C38;
+  --accent-ink: #AFC4DE;
+  --crim-bg: #46201C; --crim-fg: #F0A29A;
+  --high-bg: #3E3312; --high-fg: #E3C465;
+  --mid-bg:  #3E3312; --mid-fg:  #E3C465;
+  --low-bg:  #3E3312; --low-fg:  #E3C465;
+  --duty-bg: #242C38; --duty-fg: #A3B8D2;
+  --done-bg: #29251D;
+  --seal: #E0705F;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "IBM Plex Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
+
+/* ── Masthead ── */
+.masthead {
+  padding: 26px 0 16px;
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: 1px solid var(--line-strong);
+}
+.masthead .brand {
+  font-family: "Gowun Batang", "Nanum Myeongjo", serif;
+  font-weight: 700; font-size: 15px; letter-spacing: .14em;
+}
+.masthead .brand a { color: inherit; text-decoration: none; }
+.masthead .doc-no {
+  font-size: 11.5px; color: var(--ink-faint); letter-spacing: .1em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Hero ── */
+.hero { padding: 52px 0 36px; text-align: center; border-bottom: 1px solid var(--line); }
+.eyebrow {
+  font-size: 12px; font-weight: 500; letter-spacing: .32em;
+  color: var(--ink-soft); text-transform: uppercase; margin-bottom: 24px;
+}
+.rule.double {
+  width: 56px; height: 4px; margin: 0 auto 28px;
+  border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink);
+}
+h1 {
+  font-family: "Gowun Batang", "Nanum Myeongjo", serif;
+  font-size: clamp(28px, 5.6vw, 42px); font-weight: 700;
+  line-height: 1.32; letter-spacing: .02em; text-wrap: balance;
+  word-break: keep-all; margin-bottom: 16px;
+}
+h1 .hanja {
+  display: block; font-size: .42em; font-weight: 400;
+  letter-spacing: .55em; color: var(--ink-faint); margin-bottom: 16px;
+}
+.lede {
+  color: var(--ink-soft); max-width: 36em;
+  margin: 22px auto 0; text-align: left; word-break: keep-all;
+}
+.meta { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 30px; }
+.meta span {
+  font-size: 12.5px; font-weight: 500; color: var(--ink-soft);
+  background: var(--surface); border: 1px solid var(--line-strong);
+  border-radius: 100px; padding: 5px 14px;
+}
+.meta span strong { color: var(--ink); font-weight: 600; }
+
+/* ── Views ── */
+.stage, .summary { display: none; }
+body[data-view="home"] .summary { display: block; }
+body[data-view="all"] .stage { display: block; }
+body[data-view="all"] .summary { display: block; }
+body[data-view="1"] .stage[data-stage="1"] { display: block; }
+body[data-view="2"] .stage[data-stage="2"] { display: block; }
+body[data-view="3"] .stage[data-stage="3"] { display: block; }
+body[data-view="4"] .stage[data-stage="4"] { display: block; }
+body:not([data-view="home"]) #home { display: none; }
+body[data-view="home"] .toolbar { display: none; }
+
+/* ── Home: stage select ── */
+#home { padding-top: 36px; }
+.home-top { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+.home-hint { font-size: 14.5px; color: var(--ink-soft); }
+.home-prog {
+  font-size: 13px; font-weight: 600; color: var(--ink-soft);
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.home-prog b { color: var(--accent); font-weight: 700; }
+.stage-cards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 14px; margin: 18px 0 18px;
+}
+.stage-card {
+  font: inherit; text-align: left; cursor: pointer;
+  display: flex; gap: 14px; align-items: flex-start;
+  padding: 18px 18px 16px;
+  background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line-strong); border-radius: 2px;
+  transition: border-color .15s;
+}
+.stage-card:hover { border-color: var(--ink-soft); }
+.stage-card:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.sc-no {
+  font-family: "Gowun Batang", "Nanum Myeongjo", serif;
+  font-size: 24px; font-weight: 700; color: var(--accent);
+  line-height: 1.2;
+}
+.sc-body { flex: 1; min-width: 0; }
+.sc-title { display: block; font-size: 16px; font-weight: 600; word-break: keep-all; }
+.sc-phase { display: block; font-size: 12.5px; color: var(--ink-faint); margin: 2px 0 12px; }
+.sc-track {
+  display: block; height: 5px; background: var(--surface-2);
+  border-radius: 3px; overflow: hidden; margin-bottom: 6px;
+}
+.sc-fill {
+  display: block; height: 100%; width: 0;
+  background: var(--accent); border-radius: 3px;
+  transition: width .35s ease;
+}
+.sc-prog {
+  font-size: 12px; font-weight: 600; color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+.home-all { text-align: center; margin-bottom: 8px; }
+
+/* ── Sticky progress bar ── */
+.toolbar {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 0;
+  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.progress { flex: 1 1 220px; display: flex; align-items: center; gap: 12px; }
+.progress-track {
+  flex: 1; height: 6px; background: var(--surface-2);
+  border-radius: 3px; overflow: hidden;
+}
+.progress-fill {
+  height: 100%; width: 0%;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width .35s ease;
+}
+.progress-num {
+  font-size: 13px; font-weight: 600; color: var(--ink-soft);
+  font-variant-numeric: tabular-nums; white-space: nowrap;
+}
+.controls { display: flex; gap: 8px; align-items: center; }
+.seg { display: flex; border: 1px solid var(--line-strong); border-radius: 2px; overflow: hidden; }
+.seg button {
+  font: inherit; font-size: 12.5px; font-weight: 500;
+  padding: 5px 12px; border: none; cursor: pointer;
+  background: var(--surface); color: var(--ink-soft);
+}
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button.on { background: var(--ink); color: var(--bg); }
+.seg button:focus-visible, .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.btn {
+  font: inherit; font-size: 12.5px; font-weight: 500;
+  padding: 5px 12px; cursor: pointer;
+  background: var(--surface); color: var(--ink-soft);
+  border: 1px solid var(--line-strong); border-radius: 2px;
+}
+.btn:hover { color: var(--ink); border-color: var(--ink-soft); }
+.btn.confirming { color: var(--seal); border-color: var(--seal); font-weight: 600; }
+
+/* ── Stage ── */
+.stage { margin-top: 44px; }
+.stage-head {
+  display: flex; align-items: baseline; gap: 14px;
+  padding-bottom: 12px; border-bottom: 1px solid var(--ink);
+  margin-bottom: 0;
+}
+.stage-no {
+  font-family: "Gowun Batang", "Nanum Myeongjo", serif;
+  font-size: 26px; font-weight: 700; color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+.stage-head h2 {
+  font-family: "Gowun Batang", "Nanum Myeongjo", serif;
+  font-size: 19px; font-weight: 700; flex: 1;
+  word-break: keep-all;
+}
+.stage-head .phase {
+  font-size: 12.5px; color: var(--ink-faint); font-weight: 500;
+  white-space: nowrap;
+}
+.stage-count {
+  font-size: 13px; font-weight: 600; color: var(--ink-soft);
+  font-variant-numeric: tabular-nums;
+}
+.stage-body {
+  background: var(--surface);
+  border: 1px solid var(--line-strong); border-top: none;
+}
+
+/* ── Item row ── */
+.item { border-bottom: 1px solid var(--line); padding: 18px 20px 18px 16px; display: flex; gap: 14px; transition: background .2s; }
+.item:last-child { border-bottom: none; }
+.item.checked { background: var(--done-bg); }
+.item.checked .item-title { color: var(--ink-faint); }
+.item.hidden { display: none; }
+/* 도장형 체크: 빈 인장 자리 → 체크 시 붉은 인영이 찍힌다 */
+@keyframes stampin {
+  0%   { opacity: 0; transform: rotate(var(--rot, -4deg)) scale(1.9); }
+  55%  { opacity: 1; transform: rotate(var(--rot, -4deg)) scale(.94); }
+  100% { opacity: 1; transform: rotate(var(--rot, -4deg)) scale(1); }
+}
+.check {
+  --rot: -8deg;
+  flex-shrink: 0; margin-top: 1px;
+  width: 38px; height: 38px;
+  appearance: none; -webkit-appearance: none;
+  border: 1.5px dashed var(--line-strong); border-radius: 50%;
+  background: transparent; cursor: pointer;
+  display: grid; place-content: center;
+  position: relative;
+}
+.check::before {
+  content: "확인";
+  font-family: "Gowun Batang", "Nanum Myeongjo", serif;
+  font-size: 10.5px; font-weight: 600; letter-spacing: .08em;
+  color: var(--ink-faint); opacity: .55;
+  transition: opacity .15s;
+}
+.check:hover::before { opacity: .9; }
+.check:checked {
+  border: 2.5px solid var(--seal);
+  transform: rotate(var(--rot));
+}
+.check:checked::before {
+  content: "확인";
+  color: var(--seal); opacity: 1;
+  font-size: 12px; font-weight: 700;
+}
+.check:checked::after {
+  content: ""; position: absolute; inset: -2.5px; border-radius: 50%;
+  background:
+    radial-gradient(circle at 22% 28%, var(--done-bg) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 74% 62%, var(--done-bg) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 48% 84%, var(--done-bg) 0 1px, transparent 2px),
+    radial-gradient(circle at 84% 22%, var(--done-bg) 0 1px, transparent 2px);
+  opacity: .6; pointer-events: none;
+}
+.check.stamped:checked { animation: stampin .45s cubic-bezier(.2,.9,.3,1.2) both; }
+.check:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* 단계 완료 도장 */
+.stage-stamp, .mini-stamp {
+  font-family: "Gowun Batang", "Nanum Myeongjo", serif; font-weight: 700;
+  color: var(--seal); border: 2px solid var(--seal);
+  border-radius: 4px; white-space: nowrap;
+  display: inline-block; transform: rotate(-4deg);
+  --rot: -4deg;
+}
+.stage-stamp {
+  font-size: 13px; letter-spacing: .18em;
+  padding: 2px 10px 2px 12px; margin-right: 4px;
+}
+.stage-stamp[hidden], #complete-banner[hidden] { display: none; }
+.stage-stamp.animate, .mini-stamp.animate, .stamp-big.animate {
+  animation: stampin .5s cubic-bezier(.2,.9,.3,1.2) both;
+}
+.mini-stamp {
+  font-size: 10.5px; letter-spacing: .14em;
+  padding: 0 6px 0 8px; margin-left: 8px;
+  border-width: 1.5px; vertical-align: 1px;
+}
+/* 전 항목 완료 대형 도장 */
+#complete-banner { text-align: center; padding: 26px 0 6px; }
+.stamp-big {
+  --rot: -3.5deg;
+  display: inline-block;
+  font-family: "Gowun Batang", "Nanum Myeongjo", serif; font-weight: 700;
+  font-size: clamp(19px, 4vw, 26px); letter-spacing: .22em;
+  color: var(--seal); border: 3.5px solid var(--seal);
+  border-radius: 6px; padding: 12px 20px 12px 26px;
+  transform: rotate(var(--rot)); position: relative;
+}
+.stamp-big::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    radial-gradient(circle at 18% 30%, var(--bg) 0 2px, transparent 3px),
+    radial-gradient(circle at 72% 64%, var(--bg) 0 2px, transparent 3px),
+    radial-gradient(circle at 45% 85%, var(--bg) 0 1.5px, transparent 2.5px),
+    radial-gradient(circle at 88% 18%, var(--bg) 0 1.5px, transparent 2.5px);
+  opacity: .55; pointer-events: none;
+}
+#complete-banner .cb-sub { margin-top: 14px; font-size: 13px; color: var(--ink-soft); }
+.item-main { flex: 1; min-width: 0; }
+.item-top { display: flex; align-items: flex-start; gap: 10px; flex-wrap: wrap; }
+.item-title { font-size: 15.5px; font-weight: 600; flex: 1 1 auto; min-width: 200px; word-break: keep-all; }
+label.item-title { cursor: pointer; }
+.badge {
+  flex-shrink: 0; font-size: 11.5px; font-weight: 600;
+  padding: 3px 9px; border-radius: 2px; white-space: nowrap;
+  letter-spacing: .01em; margin-top: 1px;
+}
+.b-crim { background: var(--crim-bg); color: var(--crim-fg); }
+.b-high { background: var(--high-bg); color: var(--high-fg); }
+.b-mid  { background: var(--mid-bg);  color: var(--mid-fg); }
+.b-low  { background: var(--low-bg);  color: var(--low-fg); }
+.b-duty { background: var(--duty-bg); color: var(--duty-fg); }
+.law-ref {
+  font-size: 12px; font-weight: 600; color: var(--accent);
+  margin: 2px 0 6px;
+}
+.item-desc { font-size: 14px; color: var(--ink-soft); max-width: 44em; }
+.item-note {
+  margin-top: 8px; font-size: 13px; color: var(--ink-soft);
+  border-left: 2px solid var(--line-strong); padding-left: 12px;
+}
+.item-note li { margin-left: 16px; margin-top: 2px; }
+.item-note .note-label { font-weight: 600; color: var(--ink); font-size: 12px; letter-spacing: .04em; }
+
+/* ── Summary table ── */
+.summary { margin-top: 60px; }
+.summary h2 {
+  font-family: "Gowun Batang", "Nanum Myeongjo", serif;
+  font-size: 20px; font-weight: 700;
+  padding-bottom: 12px; border-bottom: 1px solid var(--ink); margin-bottom: 0;
+}
+.summary .sub { font-size: 13px; color: var(--ink-faint); margin: 10px 0 16px; }
+.table-scroll { overflow-x: auto; background: var(--surface); border: 1px solid var(--line-strong); }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 560px; }
+th {
+  text-align: left; font-size: 12px; font-weight: 600;
+  letter-spacing: .05em; color: var(--ink-soft);
+  padding: 12px 14px; border-bottom: 1px solid var(--line-strong);
+  background: var(--surface-2);
+}
+th.num, td.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+td { padding: 11px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: none; }
+td .law-ref { margin: 0; font-size: 11.5px; }
+.crim-row td { background: var(--crim-bg); }
+.crim-row td, .crim-row .law-ref { color: var(--crim-fg); }
+
+/* ── 프로필 · CTA ── */
+.profile { margin-top: 64px; border-top: 3px double var(--ink); padding-top: 36px; }
+.profile .p-eyebrow {
+  font-size: 12px; font-weight: 600; letter-spacing: .3em;
+  color: var(--ink-soft); margin-bottom: 20px;
+}
+.profile .p-name {
+  font-family: "Gowun Batang", "Nanum Myeongjo", serif;
+  font-size: 24px; font-weight: 700; letter-spacing: .04em;
+}
+.profile .p-name small {
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-size: 13.5px; font-weight: 400; color: var(--ink-soft);
+  margin-left: 10px; letter-spacing: 0;
+}
+.profile .p-title { font-size: 15px; color: var(--ink-soft); margin: 4px 0 14px; }
+.profile ul { list-style: none; font-size: 13.5px; color: var(--ink-soft); }
+.profile ul li { padding: 3px 0 3px 16px; position: relative; }
+.profile ul li::before {
+  content: ""; position: absolute; left: 0; top: 14px;
+  width: 6px; height: 1px; background: var(--ink-soft);
+}
+.cta-text {
+  margin-top: 24px;
+  font-family: "Gowun Batang", "Nanum Myeongjo", serif;
+  font-size: 15.5px; line-height: 1.9; word-break: keep-all;
+  color: var(--ink);
+  border-left: 2px solid var(--seal); padding-left: 20px;
+}
+.contact-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 26px; }
+.contact-btn {
+  display: inline-flex; align-items: center; gap: 9px; text-decoration: none;
+  border: 1px solid var(--ink); color: var(--ink); background: none;
+  padding: 12px 24px; font-size: 14px; font-weight: 600;
+  letter-spacing: .04em; border-radius: 2px;
+  transition: background .2s, color .2s;
+}
+.contact-btn:hover { background: var(--ink); color: var(--bg); }
+.contact-btn.solid { background: var(--ink); color: var(--bg); }
+.contact-btn.solid:hover { opacity: .88; }
+.contact-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.contact-hint {
+  margin-top: 12px; font-size: 12.5px; color: var(--seal); font-weight: 500;
+}
+.contact-hint[hidden] { display: none; }
+
+/* ── Footer ── */
+footer {
+  margin-top: 56px; padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 12.5px; color: var(--ink-faint); line-height: 1.7;
+}
+footer p + p { margin-top: 6px; }
+.brand-link {
+  color: inherit; text-decoration: none;
+  border-bottom: 1px solid var(--line-strong);
+  transition: color .15s, border-color .15s;
+}
+.brand-link:hover { color: var(--accent); border-color: var(--accent); }
+.brand-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+footer .copyright { margin-top: 14px; font-weight: 600; color: var(--ink-soft); }
+
+/* ── Print ── */
+@media print {
+  body { background: #fff; color: #111; font-size: 11.5pt; }
+  .wrap { max-width: none; padding: 0; }
+  #home { display: none !important; }
+  .stage, .summary { display: block !important; }
+  .toolbar { display: none !important; position: static; border: none; }
+  .controls, .progress { display: none; }
+  .item.hidden { display: flex; }
+  .item, .stage-body, .table-scroll { box-shadow: none; background: #fff; }
+  .item { break-inside: avoid; border-bottom: 1px solid #ccc; }
+  .stage { break-inside: avoid-page; margin-top: 24pt; }
+  .check { border: 1pt dashed #888; }
+  .check::before { color: #999; }
+  .check:checked { border: 2pt solid #BE3325; }
+  .check:checked::before { color: #BE3325; }
+  .check:checked::after { display: none; }
+  .check, .stage-stamp, .mini-stamp {
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .stage-stamp, .mini-stamp { color: #BE3325; border-color: #BE3325; }
+  .check.stamped:checked, .stage-stamp.animate, .mini-stamp.animate { animation: none; }
+  .badge { border: .8pt solid currentColor; background: #fff !important; }
+  .profile { break-inside: avoid; }
+  .contact-btn { border: .8pt solid #333; color: #111; background: #fff !important; }
+  header { padding-top: 0; }
+  a { color: inherit; text-decoration: none; }
+}
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .wrap { padding: 0 16px 64px; }
+  .badge { white-space: normal; line-height: 1.5; }
+  .item { padding: 16px 14px 16px 12px; gap: 10px; }
+  .stage-head { flex-wrap: wrap; }
+  .contact-btn { width: 100%; justify-content: center; text-align: center; }
+  .hero { padding-top: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .progress-fill, .sc-fill { transition: none; }
+  .check.stamped:checked, .stage-stamp.animate, .mini-stamp.animate, .stamp-big.animate { animation: none; }
+}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+<header class="masthead">
+  <div class="brand"><a href="https://www.linkedin.com/in/parkbyun" target="_blank" rel="noopener">상생의 노동법</a></div>
+  <div class="doc-no" id="doc-date"></div>
+</header>
+
+<div class="hero">
+  <p class="eyebrow">Compliance Checklist</p>
+  <div class="rule double"></div>
+  <h1><span class="hanja">採 用 節 次 法</span>공정채용 절차 체크리스트</h1>
+  <p class="lede">채용 기획부터 서류 파기까지, 채용 단계별로 기업이 반드시 점검해야 할 법적 의무 15개 항목입니다. 각 항목에 근거 조문과 위반 시 제재를 함께 표기했습니다.</p>
+  <div class="meta">
+    <span>적용 대상 <strong>상시 30명 이상</strong> 사업장</span>
+    <span>근거 <strong>채용절차법</strong> 및 같은 법 시행령</span>
+    <span><strong>2025년</strong> 고용노동부 업무 매뉴얼 기준</span>
+  </div>
+</div>
+
+<nav id="home" aria-label="채용 단계 선택">
+  <div class="home-top">
+    <p class="home-hint">현재 진행 중인 채용 단계를 선택하면 해당 단계의 점검 항목만 표시됩니다.</p>
+    <span class="home-prog">전체 점검 <b id="home-done">0</b> / 15</span>
+  </div>
+  <div id="complete-banner" hidden>
+    <span class="stamp-big" id="big-stamp">전 항목 점검 완료</span>
+    <p class="cb-sub">채용 단계별 법정 의무 15개 항목의 점검을 마쳤습니다. 인쇄하여 결재·보관용 문서로 활용하세요.</p>
+  </div>
+  <div class="stage-cards">
+    <button class="stage-card" data-goto="1">
+      <span class="sc-no">Ⅰ</span>
+      <span class="sc-body">
+        <span class="sc-title">채용 기획 · 광고</span>
+        <span class="sc-phase">모집 공고 이전 · 4개 항목</span>
+        <span class="sc-track"><span class="sc-fill"></span></span>
+        <span class="sc-prog">0 / 4</span>
+      </span>
+    </button>
+    <button class="stage-card" data-goto="2">
+      <span class="sc-no">Ⅱ</span>
+      <span class="sc-body">
+        <span class="sc-title">서류 응시 · 접수</span>
+        <span class="sc-phase">지원서 수집 · 4개 항목</span>
+        <span class="sc-track"><span class="sc-fill"></span></span>
+        <span class="sc-prog">0 / 4</span>
+      </span>
+    </button>
+    <button class="stage-card" data-goto="3">
+      <span class="sc-no">Ⅲ</span>
+      <span class="sc-body">
+        <span class="sc-title">선발 · 심사</span>
+        <span class="sc-phase">필기 · 면접 · 2개 항목</span>
+        <span class="sc-track"><span class="sc-fill"></span></span>
+        <span class="sc-prog">0 / 2</span>
+      </span>
+    </button>
+    <button class="stage-card" data-goto="4">
+      <span class="sc-no">Ⅳ</span>
+      <span class="sc-body">
+        <span class="sc-title">채용확정 · 사후조치</span>
+        <span class="sc-phase">합격 통지 이후 · 5개 항목</span>
+        <span class="sc-track"><span class="sc-fill"></span></span>
+        <span class="sc-prog">0 / 5</span>
+      </span>
+    </button>
+  </div>
+  <div class="home-all">
+    <button class="btn" data-goto="all">전체 항목 한 번에 보기</button>
+  </div>
+</nav>
+
+<div class="toolbar">
+  <button class="btn" id="back">← 단계 선택</button>
+  <div class="progress">
+    <div class="progress-track"><div class="progress-fill" id="fill"></div></div>
+    <span class="progress-num" id="prog">0 / 15</span>
+  </div>
+  <div class="controls">
+    <div class="seg" role="group" aria-label="항목 필터">
+      <button class="on" data-filter="all">전체</button>
+      <button data-filter="open">미점검</button>
+      <button data-filter="penalty">제재 항목</button>
+    </div>
+    <button class="btn" id="reset">초기화</button>
+  </div>
+</div>
+
+<!-- ───────── 1단계 ───────── -->
+<section class="stage" data-stage="1">
+  <div class="stage-head">
+    <span class="stage-no">Ⅰ</span>
+    <h2>채용 기획 · 광고 <span class="phase">모집 공고 이전</span></h2>
+    <span class="stage-stamp" hidden>점검필</span>
+    <span class="stage-count" data-count>0 / 4</span>
+  </div>
+  <div class="stage-body">
+
+  <div class="item" data-penalty="crim">
+    <input type="checkbox" class="check" id="c1" aria-labelledby="t1">
+    <div class="item-main">
+      <div class="item-top">
+        <label class="item-title" id="t1" for="c1">거짓 채용광고를 내지 않는다</label>
+        <span class="badge b-crim">형사처벌 · 5년 이하 징역 또는 벌금 2천만원 이하</span>
+      </div>
+      <p class="law-ref">법 제4조 제1항 · 벌칙 제16조</p>
+      <p class="item-desc">채용할 의사 없이 채용을 가장하여 구직자의 아이디어를 수집하거나 사업장을 홍보할 목적의 거짓 채용광고는 금지됩니다. 채용절차법에서 유일하게 형사처벌이 부과되는 위반 유형입니다.</p>
+    </div>
+  </div>
+
+  <div class="item" data-penalty="mid">
+    <input type="checkbox" class="check" id="c2" aria-labelledby="t2">
+    <div class="item-main">
+      <div class="item-top">
+        <label class="item-title" id="t2" for="c2">채용광고 내용을 구직자에게 불리하게 변경하지 않는다</label>
+        <span class="badge b-mid">과태료 500만원 이하</span>
+      </div>
+      <p class="law-ref">법 제4조 제2항 · 과태료 제17조 제2항 제1호</p>
+      <p class="item-desc">정당한 사유 없이 공고한 채용 직급을 낮추거나, 채용 전형을 중간에 무단으로 중단·취소하는 등 구직자에게 불리한 변경은 금지됩니다.</p>
+    </div>
+  </div>
+
+  <div class="item" data-penalty="duty">
+    <input type="checkbox" class="check" id="c3" aria-labelledby="t3">
+    <div class="item-main">
+      <div class="item-top">
+        <label class="item-title" id="t3" for="c3">채용 일정과 전형 과정을 사전에 고지한다</label>
+        <span class="badge b-duty">고지 의무</span>
+      </div>
+      <p class="law-ref">법 제8조</p>
+      <p class="item-desc">구직자가 전형 과정을 예측할 수 있도록 채용 전체 일정과 채용 과정을 알리고, 심사가 지연되는 경우 그 사실도 고지해야 합니다.</p>
+    </div>
+  </div>
+
+  <div class="item" data-penalty="low">
+    <input type="checkbox" class="check" id="c4" aria-labelledby="t4">
+    <div class="item-main">
+      <div class="item-top">
+        <label class="item-title" id="t4" for="c4">채용심사비용을 구직자에게 부담시키지 않는다</label>
+        <span class="badge b-low">시정명령 → 불이행 시 과태료 300만원 이하</span>
+      </div>
+      <p class="law-ref">법 제9조 · 시정명령 제12조 · 과태료 제17조 제3항 제3호</p>
+      <p class="item-desc">응시료 등 채용심사에 드는 비용은 원칙적으로 회사가 부담하며, 구직자에게 청구할 수 없습니다.</p>
+      <div class="item-note">
+        <span class="note-label">예외</span>
+        <ul><li>사업장 소재지 특수성 등 부득이한 사정이 있으면 고용노동부장관 승인을 받아 일부를 부담시킬 수 있음</li></ul>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<!-- ───────── 2단계 ───────── -->
+<section class="stage" data-stage="2">
+  <div class="stage-head">
+    <span class="stage-no">Ⅱ</span>
+    <h2>서류 응시 · 접수 <span class="phase">지원서 수집</span></h2>
+    <span class="stage-stamp" hidden>점검필</span>
+    <span class="stage-count" data-count>0 / 4</span>
+  </div>
+  <div class="stage-body">
+
+  <div class="item" data-penalty="mid">
+    <input type="checkbox" class="check" id="c5" aria-labelledby="t5">
+    <div class="item-main">
+      <div class="item-top">
+        <label class="item-title" id="t5" for="c5">직무와 무관한 개인정보를 요구·수집하지 않는다</label>
+        <span class="badge b-mid">과태료 500만원 이하</span>
+      </div>
+      <p class="law-ref">법 제4조의3 · 과태료 제17조 제2항 제3호</p>
+      <p class="item-desc">이력서 등 기초심사자료에 기재하도록 요구하거나 입증자료로 수집해서는 안 되는 정보입니다.</p>
+      <div class="item-note">
+        <span class="note-label">금지 정보</span>
+        <ul>
+          <li>본인의 용모 · 키 · 체중 등 신체적 조건 (본인 확인용 사진 부착 요구는 허용)</li>
+          <li>본인의 출신지역 · 혼인 여부 · 재산</li>
+          <li>직계존비속 및 형제자매의 학력 · 직업 · 재산 (가족관계 기재로 배우자 유무 등을 유추하게 하는 것도 위반)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="item" data-penalty="duty">
+    <input type="checkbox" class="check" id="c6" aria-labelledby="t6">
+    <div class="item-main">
+      <div class="item-top">
+        <label class="item-title" id="t6" for="c6">전자적 접수 창구를 마련한다</label>
+        <span class="badge b-duty">노력 의무</span>
+      </div>
+      <p class="law-ref">법 제7조 제1항</p>
+      <p class="item-desc">홈페이지·전자우편 등으로 채용서류를 제출할 수 있도록 노력하고, 구직자가 접수 양식을 미리 확인할 수 있게 편의를 제공합니다.</p>
+    </div>
+  </div>
+
+  <div class="item" data-penalty="duty">
+    <input type="checkbox" class="check" id="c7" aria-labelledby="t7">
+    <div class="item-main">
+      <div class="item-top">
+        <label class="item-title" id="t7" for="c7">서류 접수 사실을 지체 없이 알린다</label>
+        <span class="badge b-duty">고지 의무</span>
+      </div>
+      <p class="law-ref">법 제7조 제2항</p>
+      <p class="item-desc">채용서류를 접수한 경우 홈페이지 게시, 휴대전화 문자, 전자우편, 팩스, 전화 등으로 접수 사실을 구직자에게 지체 없이 알려야 합니다.</p>
+    </div>
+  </div>
+
+  <div class="item" data-penalty="duty">
+    <input type="checkbox" class="check" id="c8" aria-labelledby="t8">
+    <div class="item-main">
+      <div class="item-top">
+        <label class="item-title" id="t8" for="c8">입증자료는 서류심사 합격자에 한정해 받는다</label>
+        <span class="badge b-duty">권고 사항</span>
+      </div>
+      <p class="law-ref">법 제13조</p>
+      <p class="item-desc">졸업증명서·자격증 사본·경력증명서 등 발급 비용이 드는 입증자료와 심층심사자료는 가급적 서류심사에 합격한 구직자에 한정하여 제출받아야 합니다.</p>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<!-- ───────── 3단계 ───────── -->
+<section class="stage" data-stage="3">
+  <div class="stage-head">
+    <span class="stage-no">Ⅲ</span>
+    <h2>선발 · 심사 <span class="phase">필기 · 면접</span></h2>
+    <span class="stage-stamp" hidden>점검필</span>
+    <span class="stage-count" data-count>0 / 2</span>
+  </div>
+  <div class="stage-body">
+
+  <div class="item" data-penalty="high">
+    <input type="checkbox" class="check" id="c9" aria-labelledby="t9">
+    <div class="item-main">
+      <div class="item-top">
+        <label class="item-title" id="t9" for="c9">채용에 관한 부당한 청탁·압력·강요, 금품 수수를 차단한다</label>
+        <span class="badge b-high">과태료 3천만원 이하</span>
+      </div>
+      <p class="law-ref">법 제4조의2 · 과태료 제17조 제1항</p>
+      <p class="item-desc">누구든지 채용의 공정성을 침해하는 부당한 청탁·압력·강요를 해서는 안 되며, 채용과 관련하여 금품·향응 또는 재산상 이익을 주고받아서는 안 됩니다. 점수 조작·순위 변경 지시가 대표적 위반 사례입니다.</p>
+      <div class="item-note">
+        <span class="note-label">참고</span>
+        <ul><li>형법 등 다른 법률로 형사처벌을 받은 경우 과태료는 부과하지 않음 (1차 위반 1,500만원 → 2차 이상 3,000만원)</li></ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="item" data-penalty="mid">
+    <input type="checkbox" class="check" id="c10" aria-labelledby="t10">
+    <div class="item-main">
+      <div class="item-top">
+        <label class="item-title" id="t10" for="c10">제출물의 지식재산권을 회사에 귀속하도록 강요하지 않는다</label>
+        <span class="badge b-mid">과태료 500만원 이하</span>
+      </div>
+      <p class="law-ref">법 제4조 제4항 · 과태료 제17조 제2항 제2호</p>
+      <p class="item-desc">전형 과정에서 구직자가 제출한 포트폴리오·시안·제안서·번역물 등 채용서류와 그에 관한 저작권 등 지식재산권을 회사에 귀속하도록 강요해서는 안 됩니다.</p>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<!-- ───────── 4단계 ───────── -->
+<section class="stage" data-stage="4">
+  <div class="stage-head">
+    <span class="stage-no">Ⅳ</span>
+    <h2>채용확정 · 사후조치 <span class="phase">합격 통지 이후</span></h2>
+    <span class="stage-stamp" hidden>점검필</span>
+    <span class="stage-count" data-count>0 / 5</span>
+  </div>
+  <div class="stage-body">
+
+  <div class="item" data-penalty="duty">
+    <input type="checkbox" class="check" id="c11" aria-labelledby="t11">
+    <div class="item-main">
+      <div class="item-top">
+        <label class="item-title" id="t11" for="c11">합격·불합격 여부를 지체 없이 고지한다</label>
+        <span class="badge b-duty">고지 의무</span>
+      </div>
+      <p class="law-ref">법 제10조</p>
+      <p class="item-desc">채용대상자를 확정하면 합격자뿐 아니라 불합격한 구직자에게도 서면·전자우편·문자 등으로 채용 여부를 지체 없이 알려, 다음 취업활동에 지장이 없도록 해야 합니다.</p>
+    </div>
+  </div>
+
+  <div class="item" data-penalty="mid">
+    <input type="checkbox" class="check" id="c12" aria-labelledby="t12">
+    <div class="item-main">
+      <div class="item-top">
+        <label class="item-title" id="t12" for="c12">채용 후 제시한 근로조건을 불리하게 변경하지 않는다</label>
+        <span class="badge b-mid">과태료 500만원 이하</span>
+      </div>
+      <p class="law-ref">법 제4조 제3항 · 과태료 제17조 제2항 제1호</p>
+      <p class="item-desc">채용 확정 후 근로계약을 체결할 때, 정당한 사유 없이 채용광고에서 제시한 근로조건보다 불리하게 계약해서는 안 됩니다. 무기계약 공고 후 수습·기간제로 계약하는 경우가 대표적 위반 사례입니다.</p>
+    </div>
+  </div>
+
+  <div class="item" data-penalty="low">
+    <input type="checkbox" class="check" id="c13" aria-labelledby="t13">
+    <div class="item-main">
+      <div class="item-top">
+        <label class="item-title" id="t13" for="c13">서류 반환 규정을 채용 확정 전에 고지한다</label>
+        <span class="badge b-low">과태료 300만원 이하</span>
+      </div>
+      <p class="law-ref">법 제11조 제6항 · 과태료 제17조 제3항 제2호</p>
+      <p class="item-desc">채용 여부가 확정되기 전까지 반환 청구기간, 청구 방법(서식), 반환 이행기간, 비용 부담 등 채용서류 반환에 관한 사항을 구직자에게 알려야 합니다.</p>
+    </div>
+  </div>
+
+  <div class="item" data-penalty="low">
+    <input type="checkbox" class="check" id="c14" aria-labelledby="t14">
+    <div class="item-main">
+      <div class="item-top">
+        <label class="item-title" id="t14" for="c14">채용서류를 보관하고, 청구 시 14일 이내 반환한다</label>
+        <span class="badge b-low">보관의무 위반 시 과태료 300만원 이하</span>
+      </div>
+      <p class="law-ref">법 제11조 제1항·제3항 · 시행령 제2조~제4조 · 과태료 제17조 제3항 제1호</p>
+      <p class="item-desc">반환 청구에 대비해 구인자가 정한 청구기간(채용 확정일 이후 14일~180일 범위) 동안 채용서류를 안전하게 보관해야 합니다.</p>
+      <div class="item-note">
+        <span class="note-label">반환 절차</span>
+        <ul>
+          <li>불합격 구직자가 반환을 청구하면 본인 확인 후 청구일부터 14일 이내에 발송·전달</li>
+          <li>원칙적으로 특수취급우편물(등기)로 반환하고, 비용은 구인자 부담이 원칙</li>
+          <li>홈페이지·전자우편으로 제출된 서류와 구직자가 자발적으로 제출한 서류는 반환 대상에서 제외</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="item" data-penalty="duty">
+    <input type="checkbox" class="check" id="c15" aria-labelledby="t15">
+    <div class="item-main">
+      <div class="item-top">
+        <label class="item-title" id="t15" for="c15">미반환 서류는 지체 없이 완전하게 파기한다</label>
+        <span class="badge b-duty">파기 의무 · 개인정보 보호법 적용</span>
+      </div>
+      <p class="law-ref">법 제11조 제4항 · 개인정보 보호법 제21조</p>
+      <p class="item-desc">반환 청구기간이 지난 서류와 반환 대상이 아닌 전자 서류는 보유 목적이 달성되면 지체 없이(통상 5일 이내) 복원이 불가능한 영구 삭제·소각·파쇄의 방법으로 파기해야 합니다.</p>
+    </div>
+  </div>
+
+  </div>
+</section>
+
+<!-- ───────── 제재 요약 ───────── -->
+<section class="summary">
+  <h2>위반 시 제재 한눈에 보기</h2>
+  <p class="sub">과태료는 시행령 [별표] 부과기준에 따라 위반 횟수(최근 3년)에 따라 가중됩니다. 단위: 만원</p>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr><th>위반행위</th><th>근거</th><th class="num">1차</th><th class="num">2차</th><th class="num">3차 이상</th></tr>
+      </thead>
+      <tbody>
+        <tr class="crim-row">
+          <td>거짓 채용광고</td>
+          <td><span class="law-ref">법 제16조</span></td>
+          <td class="num" colspan="3">형사처벌 — 5년 이하 징역 또는 2천만원 이하 벌금</td>
+        </tr>
+        <tr><td>채용강요 · 금품 수수 등</td><td><span class="law-ref">제17조 ① </span></td><td class="num">1,500</td><td class="num">3,000</td><td class="num">3,000</td></tr>
+        <tr><td>채용광고 내용 · 근로조건 불리한 변경</td><td><span class="law-ref">제17조 ② 1호</span></td><td class="num">300</td><td class="num">400</td><td class="num">500</td></tr>
+        <tr><td>지식재산권 귀속 강요</td><td><span class="law-ref">제17조 ② 2호</span></td><td class="num">300</td><td class="num">400</td><td class="num">500</td></tr>
+        <tr><td>직무 무관 개인정보 요구 · 수집</td><td><span class="law-ref">제17조 ② 3호</span></td><td class="num">300</td><td class="num">400</td><td class="num">500</td></tr>
+        <tr><td>채용서류 보관의무 불이행</td><td><span class="law-ref">제17조 ③ 1호</span></td><td class="num">150</td><td class="num">200</td><td class="num">300</td></tr>
+        <tr><td>반환 등 고지의무 불이행</td><td><span class="law-ref">제17조 ③ 2호</span></td><td class="num">150</td><td class="num">200</td><td class="num">300</td></tr>
+        <tr><td>시정명령 불이행</td><td><span class="law-ref">제17조 ③ 3호</span></td><td class="num">150</td><td class="num">200</td><td class="num">300</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ───────── 프로필 · CTA ───────── -->
+<div class="profile">
+  <p class="p-eyebrow"><a class="brand-link" href="https://www.linkedin.com/in/parkbyun" target="_blank" rel="noopener">상생의 노동법</a></p>
+  <div class="p-name">박재우 <small>변호사</small></div>
+  <div class="p-title">법무법인(유) 율촌 파트너</div>
+  <ul>
+    <li>서울지방노동위원회 공익위원 역임</li>
+    <li>고용노동부 자문변호사</li>
+  </ul>
+  <p class="cta-text">
+    점검은 여기까지입니다. 검토가 필요하시면 편하게 연락 주십시오.
+  </p>
+  <div class="contact-row">
+    <a class="contact-btn solid" id="mail-btn" href="mailto:parkjw@yulchon.com" target="_blank" rel="noopener">이메일 문의 — parkjw@yulchon.com</a>
+    <a class="contact-btn" href="tel:0225285682" target="_blank" rel="noopener">전화 02-528-5682</a>
+  </div>
+  <p class="contact-hint" id="mail-hint" hidden>이메일 주소가 복사되었습니다. 메일 앱이 열리지 않으면 받는 사람란에 붙여넣어 주세요.</p>
+</div>
+
+<footer>
+  <p>본 체크리스트는 「채용절차의 공정화에 관한 법률」, 같은 법 시행령 및 2025년 고용노동부 업무 매뉴얼을 기준으로 작성한 일반 정보 자료이며, 구체적 사안에 대한 법률자문이 아닙니다. 개별 사안은 반드시 전문가와 상담하시기 바랍니다.</p>
+  <p>점검 상태는 이 브라우저에만 저장되며 외부로 전송되지 않습니다. 인쇄하면 전체 항목이 문서형 체크리스트로 출력됩니다.</p>
+  <p class="copyright">© <a class="brand-link" href="https://www.linkedin.com/in/parkbyun" target="_blank" rel="noopener">상생의 노동법</a></p>
+</footer>
+</div>
+
+<script>
+(function () {
+  var KEY = "fair-hiring-checklist-v1";
+  var checks = Array.prototype.slice.call(document.querySelectorAll(".check"));
+  var fill = document.getElementById("fill");
+  var prog = document.getElementById("prog");
+  var filterBtns = Array.prototype.slice.call(document.querySelectorAll(".seg button"));
+  var filter = "all";
+
+  function load() {
+    try {
+      var saved = JSON.parse(localStorage.getItem(KEY) || "[]");
+      checks.forEach(function (c) { c.checked = saved.indexOf(c.id) !== -1; });
+    } catch (e) {}
+  }
+  function save() {
+    try {
+      localStorage.setItem(KEY, JSON.stringify(
+        checks.filter(function (c) { return c.checked; }).map(function (c) { return c.id; })
+      ));
+    } catch (e) {}
+  }
+  var booted = false;
+  var stageDone = {};
+  var allDone = false;
+
+  function showStamp(el, animate) {
+    var wasHidden = el.hidden;
+    el.hidden = false;
+    if (animate && wasHidden) {
+      el.classList.remove("animate");
+      void el.offsetWidth;
+      el.classList.add("animate");
+    }
+  }
+
+  function render() {
+    var done = 0;
+    checks.forEach(function (c) {
+      var item = c.closest(".item");
+      item.classList.toggle("checked", c.checked);
+      if (c.checked) done++;
+      var show = filter === "all" ||
+        (filter === "open" && !c.checked) ||
+        (filter === "penalty" && item.dataset.penalty !== "duty");
+      item.classList.toggle("hidden", !show);
+    });
+    fill.style.width = (done / checks.length * 100) + "%";
+    prog.textContent = done + " / " + checks.length;
+    document.getElementById("home-done").textContent = done;
+    document.querySelectorAll(".stage").forEach(function (s) {
+      var no = s.dataset.stage;
+      var sc = Array.prototype.slice.call(s.querySelectorAll(".check"));
+      var sd = sc.filter(function (c) { return c.checked; }).length;
+      var complete = sd === sc.length;
+      s.querySelector("[data-count]").textContent = sd + " / " + sc.length;
+
+      var stamp = s.querySelector(".stage-stamp");
+      if (complete) showStamp(stamp, booted && !stageDone[no]);
+      else { stamp.hidden = true; stamp.classList.remove("animate"); }
+
+      var card = document.querySelector('.stage-card[data-goto="' + no + '"]');
+      if (card) {
+        card.querySelector(".sc-fill").style.width = (sd / sc.length * 100) + "%";
+        var progEl = card.querySelector(".sc-prog");
+        progEl.innerHTML = sd + " / " + sc.length +
+          (complete ? ' <span class="mini-stamp">점검필</span>' : "");
+        if (complete && booted && !stageDone[no]) {
+          progEl.querySelector(".mini-stamp").classList.add("animate");
+        }
+      }
+      stageDone[no] = complete;
+    });
+
+    var banner = document.getElementById("complete-banner");
+    if (done === checks.length) {
+      var wasHidden = banner.hidden;
+      banner.hidden = false;
+      if (booted && !allDone && wasHidden) {
+        var big = document.getElementById("big-stamp");
+        big.classList.remove("animate");
+        void big.offsetWidth;
+        big.classList.add("animate");
+      }
+      allDone = true;
+    } else {
+      banner.hidden = true;
+      allDone = false;
+    }
+  }
+
+  function setView(v) {
+    document.body.dataset.view = v;
+    window.scrollTo(0, 0);
+  }
+
+  checks.forEach(function (c) {
+    c.addEventListener("change", function () {
+      if (c.checked) {
+        c.classList.remove("stamped");
+        void c.offsetWidth;
+        c.classList.add("stamped");
+      } else {
+        c.classList.remove("stamped");
+      }
+      save(); render();
+    });
+  });
+  filterBtns.forEach(function (b) {
+    b.addEventListener("click", function () {
+      filter = b.dataset.filter;
+      filterBtns.forEach(function (x) { x.classList.toggle("on", x === b); });
+      render();
+    });
+  });
+  var resetBtn = document.getElementById("reset");
+  var resetTimer = null;
+  resetBtn.addEventListener("click", function () {
+    if (resetBtn.classList.contains("confirming")) {
+      clearTimeout(resetTimer);
+      resetBtn.classList.remove("confirming");
+      resetBtn.textContent = "초기화";
+      checks.forEach(function (c) {
+        c.checked = false;
+        c.classList.remove("stamped");
+      });
+      save(); render();
+    } else {
+      resetBtn.classList.add("confirming");
+      resetBtn.textContent = "한 번 더 누르면 초기화";
+      resetTimer = setTimeout(function () {
+        resetBtn.classList.remove("confirming");
+        resetBtn.textContent = "초기화";
+      }, 3000);
+    }
+  });
+  document.querySelectorAll("[data-goto]").forEach(function (b) {
+    b.addEventListener("click", function () { setView(b.dataset.goto); });
+  });
+  document.getElementById("back").addEventListener("click", function () { setView("home"); });
+
+  var mailBtn = document.getElementById("mail-btn");
+  var mailHint = document.getElementById("mail-hint");
+  var mailTimer = null;
+  mailBtn.addEventListener("click", function () {
+    var addr = "parkjw@yulchon.com";
+    function showHint() {
+      mailHint.hidden = false;
+      clearTimeout(mailTimer);
+      mailTimer = setTimeout(function () { mailHint.hidden = true; }, 6000);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(addr).then(showHint, function () { fallbackCopy(); });
+    } else {
+      fallbackCopy();
+    }
+    function fallbackCopy() {
+      try {
+        var ta = document.createElement("textarea");
+        ta.value = addr;
+        ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand("copy");
+        document.body.removeChild(ta);
+        showHint();
+      } catch (e) {}
+    }
+  });
+
+  var d = new Date();
+  document.getElementById("doc-date").textContent =
+    "점검일 " + d.getFullYear() + ". " +
+    ("0" + (d.getMonth() + 1)).slice(-2) + ". " +
+    ("0" + d.getDate()).slice(-2) + ".";
+
+  setView("home");
+  load(); render();
+  booted = true;
+})();
+</script>
+
+</body>
+</html>
