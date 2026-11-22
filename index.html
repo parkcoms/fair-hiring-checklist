@@ -514,6 +514,12 @@ footer .copyright { margin-top: 14px; font-weight: 600; color: var(--ink-soft); 
   .progress-fill, .sc-fill { transition: none; }
   .check.stamped:checked, .stage-stamp.animate, .mini-stamp.animate, .stamp-big.animate { animation: none; }
 }
+
+/* 홈페이지(상생의 노동법) 연결 줄 — 2026-11-22 추가 */
+.site-links { margin: 14px 0 0; font-size: 14px; color: var(--ink-soft); line-height: 1.7; }
+.site-links a { color: var(--seal); font-weight: 700; text-decoration: none; margin-left: 10px; white-space: nowrap; }
+.site-links a:hover { text-decoration: underline; }
+@media print { .site-links { display: none !important; } }
 </style>
 </head>
 <body>
@@ -905,6 +911,7 @@ footer .copyright { margin-top: 14px; font-weight: 600; color: var(--ink-soft); 
     <a class="contact-btn" href="tel:0225285682" target="_blank" rel="noopener">전화 02-528-5682</a>
   </div>
   <p class="contact-hint" id="mail-hint" hidden>이메일 주소가 복사되었습니다. 메일 앱이 열리지 않으면 받는 사람란에 붙여넣어 주세요.</p>
+  <p class="site-links">초기 상담은 무료입니다. <a href="https://sangsaeng-site.vercel.app/fees/#contact">수임료·의뢰 절차 보기 →</a> <a href="https://sangsaeng-site.vercel.app/tools/">다른 실무 도구 →</a></p>
 </div>
 
 <footer>
