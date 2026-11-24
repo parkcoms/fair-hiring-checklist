@@ -521,6 +521,13 @@ footer .copyright { margin-top: 14px; font-weight: 600; color: var(--ink-soft); 
 .site-links a { color: var(--seal); font-weight: 700; text-decoration: none; margin-left: 10px; white-space: nowrap; }
 .site-links a:hover { text-decoration: underline; }
 @media print { .site-links { display: none !important; } }
+
+/* 결과로 상담 문의(메일) 버튼 — 2026-11-25 추가 */
+.inquiry-btn { font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; min-height: 44px; }
+.inquiry-note { margin-top: 12px; font-size: 13px; color: var(--ink-soft); line-height: 1.7; word-break: keep-all; }
+.inquiry-status { margin-top: 10px; font-size: 13px; color: var(--ink); background: var(--surface-2); border-left: 2px solid var(--high-fg); padding: 10px 14px; word-break: keep-all; }
+.inquiry-status:empty { display: none; }
+@media print { .inquiry-btn, .inquiry-note, .inquiry-status { display: none !important; } }
 </style>
 </head>
 <body>
@@ -908,9 +915,12 @@ footer .copyright { margin-top: 14px; font-weight: 600; color: var(--ink-soft); 
     점검은 여기까지입니다. 검토가 필요하시면 편하게 연락 주십시오.
   </p>
   <div class="contact-row">
-    <a class="contact-btn solid" id="mail-btn" href="mailto:parkjw@yulchon.com" target="_blank" rel="noopener">이메일 문의 — parkjw@yulchon.com</a>
+    <button type="button" class="contact-btn solid inquiry-btn" id="inquiry-btn">이 결과로 상담 문의 메일 쓰기</button>
+    <a class="contact-btn" id="mail-btn" href="mailto:parkjw@yulchon.com" target="_blank" rel="noopener">이메일 문의 — parkjw@yulchon.com</a>
     <a class="contact-btn" href="tel:0225285682" target="_blank" rel="noopener">전화 02-528-5682</a>
   </div>
+  <p class="inquiry-note">결과 요약이 채워진 새 메일이 열립니다. 보내기 전에 고치거나 지울 수 있으며, 이 화면의 내용은 자동으로 전송되지 않습니다.</p>
+  <p class="inquiry-status" id="inquiry-status" role="status" aria-live="polite"></p>
   <p class="contact-hint" id="mail-hint" hidden>이메일 주소가 복사되었습니다. 메일 앱이 열리지 않으면 받는 사람란에 붙여넣어 주세요.</p>
   <p class="site-links">보수 제안을 위한 초기 상담은 무료입니다. <a href="https://winwinlabor.com/fees/#contact">수임료·의뢰 절차 보기 →</a> <a href="https://winwinlabor.com/tools/">다른 실무 도구 →</a></p>
 </div>
@@ -923,6 +933,36 @@ footer .copyright { margin-top: 14px; font-weight: 600; color: var(--ink-soft); 
 </div>
 
 <script>
+// ── 결과로 상담 문의(메일) — 상생의 노동법 실무 도구 공통 양식(2026-11-25) ──
+// 버튼을 누르면 ① 전체 결과를 클립보드에 복사(가능할 때만) ② 결과 요약이 채워진 새 메일(mailto)을 연다.
+// 어디로도 자동 전송하지 않는다. 사용자가 메일 프로그램에서 확인·수정한 뒤 직접 보낸다.
+// 일부 메일 프로그램(윈도우 아웃룩 등)은 2,000자 안팎에서 mailto 주소를 자르므로 1,900자를 넘으면 요약 줄을 뒤에서부터 뺀다.
+// toolName: 도구 이름(짧게), lines: 요약 줄 배열(중요한 것부터), fullText: 클립보드에 넣을 전체 결과(없으면 lines를 합친 것)
+// 돌려주는 값: true = 요약이 잘렸음(화면에 '전체 결과를 복사해 두었다'고 알릴 것)
+function openInquiryMail(toolName, lines, fullText){
+  var TO = 'parkjw@yulchon.com', LIMIT = 1900;
+  var n = new Date(), stamp = n.getFullYear() + '. ' + (n.getMonth() + 1) + '. ' + n.getDate() + '.';
+  var subject = '[실무 도구 문의] ' + toolName;
+  var head = ['■ 결과 요약(' + stamp + ')'];
+  var tail = ['', '■ 문의', '성함/회사:', '상대방 당사자(이해상충 확인):', '사안 개요:', '',
+    '※ 민감정보는 적지 마시고, 핵심 자료는 이해상충 확인 뒤에 보내 주십시오.'];
+  var make = function(ls){
+    return 'mailto:' + TO + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(head.concat(ls, tail).join('\r\n'));
+  };
+  var use = lines.slice(), url = make(use), cut = false;
+  while (url.length > LIMIT && use.length > 0) {
+    use.pop(); cut = true;
+    url = make(use.concat(['… (전체 결과는 복사해 두었으니 붙여 넣어 주세요)']));
+  }
+  var full = fullText || ['■ ' + toolName + ' 결과 요약(' + stamp + ')'].concat(lines).join('\n');
+  try {
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(full).catch(function(){});
+    else { var ta = document.createElement('textarea'); ta.value = full; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); }
+  } catch (e) {}
+  window.location.href = url;
+  return cut;
+}
+
 (function () {
   var KEY = "fair-hiring-checklist-v1";
   var checks = Array.prototype.slice.call(document.querySelectorAll(".check"));
@@ -1089,6 +1129,60 @@ footer .copyright { margin-top: 14px; font-weight: 600; color: var(--ink-soft); 
         document.body.removeChild(ta);
         showHint();
       } catch (e) {}
+    }
+  });
+
+  // 이 결과로 상담 문의 메일 쓰기 — 현재 체크 상태로 요약(점검 수 → 미점검 항목을 제재가 무거운 순으로)
+  var SHORT = {
+    c1: "거짓 채용광고 금지", c2: "채용광고 불리한 변경 금지", c3: "채용 일정·전형 사전 고지",
+    c4: "채용심사비용 부담 금지", c5: "직무 무관 개인정보 수집 금지", c6: "전자적 접수 창구 마련",
+    c7: "서류 접수 사실 고지", c8: "입증자료 서류합격자 한정", c9: "부당 청탁·금품 수수 차단",
+    c10: "지식재산권 귀속 강요 금지", c11: "합격·불합격 지체 없이 고지", c12: "근로조건 불리한 변경 금지",
+    c13: "서류 반환 규정 사전 고지", c14: "채용서류 보관·14일 내 반환", c15: "미반환 서류 파기"
+  };
+  var SEVERITY = { crim: 0, high: 1, mid: 2, low: 3, duty: 4 };
+  var STAGE_NO = { "1": "Ⅰ", "2": "Ⅱ", "3": "Ⅲ", "4": "Ⅳ" };
+  document.getElementById("inquiry-btn").addEventListener("click", function () {
+    var status = document.getElementById("inquiry-status");
+    status.textContent = "";
+    var total = checks.length;
+    var done = checks.filter(function (c) { return c.checked; }).length;
+    var stageOf = function (c) { return c.closest(".stage").dataset.stage; };
+    var lines;
+    if (done === 0) {
+      lines = ["아직 확인 표시한 항목이 없습니다(" + total + "항목 모두 미점검)."];
+    } else {
+      lines = ["점검 결과: " + total + "항목 중 확인 " + done + " · 미점검 " + (total - done)];
+      var open = checks.filter(function (c) { return !c.checked; });
+      open.sort(function (a, b) {
+        var sa = SEVERITY[a.closest(".item").dataset.penalty], sb = SEVERITY[b.closest(".item").dataset.penalty];
+        return sa !== sb ? sa - sb : checks.indexOf(a) - checks.indexOf(b);
+      });
+      if (open.length) {
+        lines.push("미점검 항목(제재가 무거운 순):");
+        open.forEach(function (c) { lines.push("- " + STAGE_NO[stageOf(c)] + " " + SHORT[c.id]); });
+      } else {
+        lines.push("전 항목 점검 완료");
+      }
+    }
+    var full = [
+      "[공정채용 절차 체크리스트 점검 결과 — 상생의 노동법]",
+      document.getElementById("doc-date").textContent,
+      "점검 결과: " + total + "항목 중 확인 " + done + " · 미점검 " + (total - done)
+    ];
+    document.querySelectorAll(".stage").forEach(function (s) {
+      var sc = Array.prototype.slice.call(s.querySelectorAll(".check"));
+      var sd = sc.filter(function (c) { return c.checked; }).length;
+      full.push("", STAGE_NO[s.dataset.stage] + " " + s.querySelector(".stage-head h2").firstChild.textContent.trim() + " (" + sd + " / " + sc.length + ")");
+      sc.forEach(function (c) {
+        var item = c.closest(".item");
+        full.push((c.checked ? "[확인] " : "[미점검] ") + item.querySelector(".item-title").textContent.trim() +
+          " — " + item.querySelector(".badge").textContent.trim());
+      });
+    });
+    full.push("", "※ 일반 정보 자료이며 구체적 사안에 대한 법률자문이 아닙니다.");
+    if (openInquiryMail("공정채용 절차 체크리스트", lines, full.join("\n"))) {
+      status.textContent = "요약이 길어 일부를 줄였습니다. 전체 결과를 복사해 두었으니 메일에 붙여 넣어 주세요.";
     }
   });
 
