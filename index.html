@@ -528,6 +528,26 @@ footer .copyright { margin-top: 14px; font-weight: 600; color: var(--ink-soft); 
 .inquiry-status { margin-top: 10px; font-size: 13px; color: var(--ink); background: var(--surface-2); border-left: 2px solid var(--high-fg); padding: 10px 14px; word-break: keep-all; }
 .inquiry-status:empty { display: none; }
 @media print { .inquiry-btn, .inquiry-note, .inquiry-status { display: none !important; } }
+
+/* ── 공유 버튼(2026-11-25) — 맨 윗줄(masthead) 오른쪽 끝. 위아래 음수 여백으로 줄 높이를 늘리지 않는다 ── */
+.masthead .doc-no { margin-left: auto; }
+.ws { position: relative; display: flex; flex: none; align-self: center; margin-left: 14px; }
+.ws-btn { position: relative; display: inline-flex; align-items: center; gap: 5px; min-height: 0; margin: -6px 0; padding: 6px 12px;
+  font: inherit; font-size: 14px; font-weight: 700; line-height: 1.2; color: var(--accent); background: var(--surface); border: 1px solid var(--line-strong); border-radius: 999px; cursor: pointer; }
+.ws-btn::after { content: ""; position: absolute; inset: -7px -4px; }
+.ws-btn:hover, .ws-btn[aria-expanded="true"] { border-color: var(--accent); }
+.ws-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.ws-btn svg { width: 15px; height: 15px; flex: none; }
+.ws-menu { position: absolute; right: 0; top: calc(100% + 10px); z-index: 30; min-width: 200px; padding: 6px; background: var(--surface); border: 1px solid var(--line-strong); border-radius: 12px;
+  box-shadow: 0 8px 24px color-mix(in srgb, var(--ink) 16%, transparent); }
+.ws-menu[hidden] { display: none; }
+.ws-menu a, .ws-menu button { display: flex; align-items: center; width: 100%; min-height: 44px; margin: 0; padding: 0 12px; border: 0; border-radius: 8px; background: none;
+  font: inherit; font-size: 15px; font-weight: 500; color: var(--ink); text-decoration: none; text-align: left; cursor: pointer; }
+.ws-menu a:hover, .ws-menu button:hover { background: var(--surface-2); }
+.ws-menu a:focus-visible, .ws-menu button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.ws-status { margin: 2px 12px 4px; font-size: 14px; color: var(--accent-ink); }
+.ws-status:empty { display: none; }
+@media print { .ws { display: none !important; } }
 </style>
 </head>
 <body>
@@ -537,6 +557,17 @@ footer .copyright { margin-top: 14px; font-weight: 600; color: var(--ink-soft); 
 <header class="masthead">
   <div class="brand"><a href="https://winwinlabor.com/" title="상생의 노동법 홈페이지">상생의 노동법</a></div>
   <div class="doc-no" id="doc-date"></div>
+  <div class="ws">
+    <button type="button" class="ws-btn" id="ws-btn" aria-expanded="false" aria-controls="ws-menu" aria-label="이 도구 공유">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7"/><path d="M16 6l-4-4-4 4"/><path d="M12 2v13"/></svg>공유
+    </button>
+    <div class="ws-menu" id="ws-menu" hidden>
+      <button type="button" data-ws="copy">링크 복사</button>
+      <a data-ws="linkedin" href="https://www.linkedin.com/" target="_blank" rel="noopener">링크드인에 공유</a>
+      <a data-ws="mail" href="mailto:">메일로 보내기</a>
+      <p class="ws-status" role="status"></p>
+    </div>
+  </div>
 </header>
 
 <div class="hero">
@@ -1195,6 +1226,40 @@ function openInquiryMail(toolName, lines, fullText){
   setView("home");
   load(); render();
   booted = true;
+})();
+</script>
+<script>
+// ── 공유 버튼 — 상생의 노동법 실무 도구 공통(2026-11-25) ──
+// 도구의 대표 주소(canonical)·제목·소개(og 태그)만 공유한다. 입력값·결과는 절대 담지 않는다. 외부 스크립트·저장 없음.
+// 휴대폰(터치 화면)은 기본 공유 창, 그 밖에는 링크 복사·링크드인·메일 메뉴.
+(function(){
+  var btn = document.getElementById('ws-btn'), menu = document.getElementById('ws-menu');
+  if (!btn || !menu) return;
+  var wrap = btn.parentNode, status = menu.querySelector('.ws-status');
+  var canon = document.querySelector('link[rel="canonical"]');
+  var url = canon ? canon.href : location.origin + location.pathname;
+  var meta = function(p){ var m = document.querySelector('meta[property="og:' + p + '"]'); return m ? m.content : ''; };
+  var title = meta('title') || document.title, text = meta('description');
+  menu.querySelector('[data-ws="linkedin"]').href = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(url);
+  menu.querySelector('[data-ws="mail"]').href = 'mailto:?subject=' + encodeURIComponent(title) + '&body=' + encodeURIComponent((text ? text + '\r\n' : '') + url);
+  function setOpen(v){ menu.hidden = !v; btn.setAttribute('aria-expanded', String(v)); if (!v) status.textContent = ''; }
+  btn.addEventListener('click', function(){
+    if (navigator.share && window.matchMedia && window.matchMedia('(pointer: coarse)').matches) {
+      navigator.share({ title: title, text: text, url: url }).catch(function(){});
+      return;
+    }
+    setOpen(menu.hidden);
+  });
+  menu.addEventListener('click', function(e){
+    var t = e.target.closest ? e.target.closest('[data-ws]') : null;
+    if (!t) return;
+    if (t.getAttribute('data-ws') !== 'copy') { setTimeout(function(){ setOpen(false); }, 0); return; }
+    var done = function(){ status.textContent = '링크를 복사했습니다.'; };
+    var fallback = function(){ var ta = document.createElement('textarea'); ta.value = url; document.body.appendChild(ta); ta.select(); try { document.execCommand('copy'); done(); } catch (er) {} ta.remove(); };
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(url).then(done, fallback); else fallback();
+  });
+  document.addEventListener('click', function(e){ if (!menu.hidden && !wrap.contains(e.target)) setOpen(false); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !menu.hidden) { setOpen(false); btn.focus(); } });
 })();
 </script>
 
